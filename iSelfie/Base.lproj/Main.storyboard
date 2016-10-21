@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="iSelfie" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,53 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qQO-v9-w0t">
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="MB7-1h-666" appends="YES" id="2yd-MR-7ar"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nl-lu-jiQ">
+                                <state key="normal" title="Snap!"/>
+                                <connections>
+                                    <action selector="cameraButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TkT-q4-1DV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IYD-Al-cS0">
+                                <state key="normal" title="Photo Lib"/>
+                                <connections>
+                                    <action selector="photolibraryButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tMU-XL-Pn6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qQO-v9-w0t" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2QI-N9-BTi"/>
+                            <constraint firstItem="IYD-Al-cS0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Jgs-ry-TFq"/>
+                            <constraint firstItem="qQO-v9-w0t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Our-pB-7mu"/>
+                            <constraint firstItem="1nl-lu-jiQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XGo-uk-ema"/>
+                            <constraint firstItem="qQO-v9-w0t" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XTU-F2-lIr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1nl-lu-jiQ" secondAttribute="bottom" constant="8" id="XxU-CZ-g2m"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IYD-Al-cS0" secondAttribute="bottom" constant="8" id="Yps-gI-s3o"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qQO-v9-w0t" secondAttribute="bottom" constant="36" id="fHd-oN-LAM"/>
+                            <constraint firstItem="qQO-v9-w0t" firstAttribute="centerX" secondItem="1nl-lu-jiQ" secondAttribute="centerX" id="tJb-6u-gle"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cameraView" destination="qQO-v9-w0t" id="aAt-hN-mr6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="MB7-1h-666">
+                    <connections>
+                        <action selector="zoom:" destination="BYZ-38-t0r" id="UyP-Uz-v6s"/>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="WAN-EM-lEV"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="-79.200000000000003" y="138.98050974512745"/>
         </scene>
     </scenes>
 </document>

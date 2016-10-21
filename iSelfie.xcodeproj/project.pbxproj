@@ -196,6 +196,7 @@
 				TargetAttributes = {
 					BD4D7AC81DB8E5CE00EE216F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = N2863VNNZV;
 						ProvisioningStyle = Automatic;
 					};
 					BD4D7ADF1DB8E5CE00EE216F = {
@@ -416,6 +417,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2863VNNZV;
 				INFOPLIST_FILE = iSelfie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waterbleu.iSelfie;
@@ -428,6 +430,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2863VNNZV;
 				INFOPLIST_FILE = iSelfie/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waterbleu.iSelfie;
